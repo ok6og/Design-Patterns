@@ -15,7 +15,9 @@ namespace designPattterns
             Cashier cashier = new Cashier();
             MainChef chef = new MainChef();
             restourant.personal(chef,cashier);
+
             restourant.Open();
+
             TakeOrderCommand OrderClassicBurgerWithKetchupSauce = new TakeOrderCommand(restourant.getCashier(), classicBurger,ketchupSauce);
             restourant.getChef().setCommand(OrderClassicBurgerWithKetchupSauce);
             restourant.getChef().cookOrder();
@@ -28,6 +30,7 @@ namespace designPattterns
             TakeOrderCommand OrderVegitarianWithGarlicSauce = new TakeOrderCommand(restourant.getCashier(), vegBurger, garlicSauce);
             restourant.getChef().setCommand(OrderVegitarianWithGarlicSauce);
             restourant.getChef().cookOrder();
+
             restourant.Close();
         }
     }
